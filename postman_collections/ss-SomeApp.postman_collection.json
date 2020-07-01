@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "f64c169d-333e-4b30-88a7-6ed8c5424362",
+		"name": "ss-SomeApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/register error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Bob Sanders",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "bob.sanders@l7api.test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password1",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "not_identical",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/register",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/register success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Bob Sanders",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "bob.sanders@l7api.test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password1",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "Password1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/register",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "bob.sanders@l7api.test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "wrong_password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/login",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "334d2d30-c89a-4de4-86b5-319f78452f41",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "bob.sanders@l7api.test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/login",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ceo/122 error",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDc4NWUyNzM1MDFlOGRjNTY2ZjhlNGNkZTJiY2U4ZWVkYjUyNzhjNjUwZWU0NTI0N2FkMTg4Njc2NTU1MDJjYWZlNjQ1ZDA5YTNiMjgxMTIiLCJpYXQiOjE1OTM2MjA0MDgsIm5iZiI6MTU5MzYyMDQwOCwiZXhwIjoxNjI1MTU2NDA4LCJzdWIiOiIxMiIsInNjb3BlcyI6W119.Lf89rUMp7IoIEwYNNKspu4JL7abExjAH7zES9ZZY0iYRJ_f-ioGoFAtCmEkP6quNXZej2qNLkW7IQWKBS3H3nEAavo5_B4PvvyIV6VkXe0unIOhWg8EsCgNfQFEbTy8kCdpd_UdxR97c2q_LDpxIS3a3oDE9Khl9EWJOZnkAL7j1M9Td6i_xxsZuyRCOXADJgK1mL0R97_oBZh0ZrQLIVjTb92RA5bi35G-BvWDo5S4R0ZjAyz0pPKj1R3BgogTCyXESdff8f_0VqqAGX1n0-GUTJ5Cey_RCrf--yWRj2xXhRk9bi2_PYmfaNF5tdiyHHNuSRw55KR3QlxYAQpYc3nBNAD636M4dNK97Of0yGrL1u0nJMcPO2gvbxc-j4l_McgmPIe4VgybTjoHZd9KshCgL_ZGOrZm_wvTopLbyeWUCSSupC9wCVJe9YEexnaXdLGF5FTUtsqcKZnCXd-YP1scTuhfTkuq11_hwyH0w_NTSWjD3FsZ3f-GUh6guo37QFMvbkqlp8lDDM_RLK2DZUWjxKdwAU2O8g1hS3gqZWtdgRgNlICc3-UaHFP0mJu1RrAFRKWLcEf-lbETa7o6bt4G7ZTSgZlPeyxvf72xuLBPrcDvvXoGto8oD1iS7LgU8ZBe78sDeowq1vsHrjmNHTFbkjCa4NT2I0UjpfM_Z5nA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/ceo/122",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"ceo",
+						"122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ceo/32 success",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f204a021-6d77-4d00-aea0-12aa83b7341d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDc4NWUyNzM1MDFlOGRjNTY2ZjhlNGNkZTJiY2U4ZWVkYjUyNzhjNjUwZWU0NTI0N2FkMTg4Njc2NTU1MDJjYWZlNjQ1ZDA5YTNiMjgxMTIiLCJpYXQiOjE1OTM2MjA0MDgsIm5iZiI6MTU5MzYyMDQwOCwiZXhwIjoxNjI1MTU2NDA4LCJzdWIiOiIxMiIsInNjb3BlcyI6W119.Lf89rUMp7IoIEwYNNKspu4JL7abExjAH7zES9ZZY0iYRJ_f-ioGoFAtCmEkP6quNXZej2qNLkW7IQWKBS3H3nEAavo5_B4PvvyIV6VkXe0unIOhWg8EsCgNfQFEbTy8kCdpd_UdxR97c2q_LDpxIS3a3oDE9Khl9EWJOZnkAL7j1M9Td6i_xxsZuyRCOXADJgK1mL0R97_oBZh0ZrQLIVjTb92RA5bi35G-BvWDo5S4R0ZjAyz0pPKj1R3BgogTCyXESdff8f_0VqqAGX1n0-GUTJ5Cey_RCrf--yWRj2xXhRk9bi2_PYmfaNF5tdiyHHNuSRw55KR3QlxYAQpYc3nBNAD636M4dNK97Of0yGrL1u0nJMcPO2gvbxc-j4l_McgmPIe4VgybTjoHZd9KshCgL_ZGOrZm_wvTopLbyeWUCSSupC9wCVJe9YEexnaXdLGF5FTUtsqcKZnCXd-YP1scTuhfTkuq11_hwyH0w_NTSWjD3FsZ3f-GUh6guo37QFMvbkqlp8lDDM_RLK2DZUWjxKdwAU2O8g1hS3gqZWtdgRgNlICc3-UaHFP0mJu1RrAFRKWLcEf-lbETa7o6bt4G7ZTSgZlPeyxvf72xuLBPrcDvvXoGto8oD1iS7LgU8ZBe78sDeowq1vsHrjmNHTFbkjCa4NT2I0UjpfM_Z5nA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/ceo/32",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"ceo",
+						"32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ceo/122 error",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDc4NWUyNzM1MDFlOGRjNTY2ZjhlNGNkZTJiY2U4ZWVkYjUyNzhjNjUwZWU0NTI0N2FkMTg4Njc2NTU1MDJjYWZlNjQ1ZDA5YTNiMjgxMTIiLCJpYXQiOjE1OTM2MjA0MDgsIm5iZiI6MTU5MzYyMDQwOCwiZXhwIjoxNjI1MTU2NDA4LCJzdWIiOiIxMiIsInNjb3BlcyI6W119.Lf89rUMp7IoIEwYNNKspu4JL7abExjAH7zES9ZZY0iYRJ_f-ioGoFAtCmEkP6quNXZej2qNLkW7IQWKBS3H3nEAavo5_B4PvvyIV6VkXe0unIOhWg8EsCgNfQFEbTy8kCdpd_UdxR97c2q_LDpxIS3a3oDE9Khl9EWJOZnkAL7j1M9Td6i_xxsZuyRCOXADJgK1mL0R97_oBZh0ZrQLIVjTb92RA5bi35G-BvWDo5S4R0ZjAyz0pPKj1R3BgogTCyXESdff8f_0VqqAGX1n0-GUTJ5Cey_RCrf--yWRj2xXhRk9bi2_PYmfaNF5tdiyHHNuSRw55KR3QlxYAQpYc3nBNAD636M4dNK97Of0yGrL1u0nJMcPO2gvbxc-j4l_McgmPIe4VgybTjoHZd9KshCgL_ZGOrZm_wvTopLbyeWUCSSupC9wCVJe9YEexnaXdLGF5FTUtsqcKZnCXd-YP1scTuhfTkuq11_hwyH0w_NTSWjD3FsZ3f-GUh6guo37QFMvbkqlp8lDDM_RLK2DZUWjxKdwAU2O8g1hS3gqZWtdgRgNlICc3-UaHFP0mJu1RrAFRKWLcEf-lbETa7o6bt4G7ZTSgZlPeyxvf72xuLBPrcDvvXoGto8oD1iS7LgU8ZBe78sDeowq1vsHrjmNHTFbkjCa4NT2I0UjpfM_Z5nA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "John Anderson",
+							"type": "text"
+						},
+						{
+							"key": "company_name",
+							"value": "Anderson's",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2014",
+							"type": "text"
+						},
+						{
+							"key": "company_headquarters",
+							"value": "Adelaide, SA, Australia",
+							"type": "text"
+						},
+						{
+							"key": "what_company_does",
+							"value": "Furniture",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/ceo/122",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"ceo",
+						"122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ceo/32 success",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDc4NWUyNzM1MDFlOGRjNTY2ZjhlNGNkZTJiY2U4ZWVkYjUyNzhjNjUwZWU0NTI0N2FkMTg4Njc2NTU1MDJjYWZlNjQ1ZDA5YTNiMjgxMTIiLCJpYXQiOjE1OTM2MjA0MDgsIm5iZiI6MTU5MzYyMDQwOCwiZXhwIjoxNjI1MTU2NDA4LCJzdWIiOiIxMiIsInNjb3BlcyI6W119.Lf89rUMp7IoIEwYNNKspu4JL7abExjAH7zES9ZZY0iYRJ_f-ioGoFAtCmEkP6quNXZej2qNLkW7IQWKBS3H3nEAavo5_B4PvvyIV6VkXe0unIOhWg8EsCgNfQFEbTy8kCdpd_UdxR97c2q_LDpxIS3a3oDE9Khl9EWJOZnkAL7j1M9Td6i_xxsZuyRCOXADJgK1mL0R97_oBZh0ZrQLIVjTb92RA5bi35G-BvWDo5S4R0ZjAyz0pPKj1R3BgogTCyXESdff8f_0VqqAGX1n0-GUTJ5Cey_RCrf--yWRj2xXhRk9bi2_PYmfaNF5tdiyHHNuSRw55KR3QlxYAQpYc3nBNAD636M4dNK97Of0yGrL1u0nJMcPO2gvbxc-j4l_McgmPIe4VgybTjoHZd9KshCgL_ZGOrZm_wvTopLbyeWUCSSupC9wCVJe9YEexnaXdLGF5FTUtsqcKZnCXd-YP1scTuhfTkuq11_hwyH0w_NTSWjD3FsZ3f-GUh6guo37QFMvbkqlp8lDDM_RLK2DZUWjxKdwAU2O8g1hS3gqZWtdgRgNlICc3-UaHFP0mJu1RrAFRKWLcEf-lbETa7o6bt4G7ZTSgZlPeyxvf72xuLBPrcDvvXoGto8oD1iS7LgU8ZBe78sDeowq1vsHrjmNHTFbkjCa4NT2I0UjpfM_Z5nA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "John Anderson",
+							"type": "text"
+						},
+						{
+							"key": "company_name",
+							"value": "Anderson's",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2014",
+							"type": "text"
+						},
+						{
+							"key": "company_headquarters",
+							"value": "Adelaide, SA, Australia",
+							"type": "text"
+						},
+						{
+							"key": "what_company_does",
+							"value": "Furniture",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/ceo/32",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"ceo",
+						"32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ceo/122 error",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDc4NWUyNzM1MDFlOGRjNTY2ZjhlNGNkZTJiY2U4ZWVkYjUyNzhjNjUwZWU0NTI0N2FkMTg4Njc2NTU1MDJjYWZlNjQ1ZDA5YTNiMjgxMTIiLCJpYXQiOjE1OTM2MjA0MDgsIm5iZiI6MTU5MzYyMDQwOCwiZXhwIjoxNjI1MTU2NDA4LCJzdWIiOiIxMiIsInNjb3BlcyI6W119.Lf89rUMp7IoIEwYNNKspu4JL7abExjAH7zES9ZZY0iYRJ_f-ioGoFAtCmEkP6quNXZej2qNLkW7IQWKBS3H3nEAavo5_B4PvvyIV6VkXe0unIOhWg8EsCgNfQFEbTy8kCdpd_UdxR97c2q_LDpxIS3a3oDE9Khl9EWJOZnkAL7j1M9Td6i_xxsZuyRCOXADJgK1mL0R97_oBZh0ZrQLIVjTb92RA5bi35G-BvWDo5S4R0ZjAyz0pPKj1R3BgogTCyXESdff8f_0VqqAGX1n0-GUTJ5Cey_RCrf--yWRj2xXhRk9bi2_PYmfaNF5tdiyHHNuSRw55KR3QlxYAQpYc3nBNAD636M4dNK97Of0yGrL1u0nJMcPO2gvbxc-j4l_McgmPIe4VgybTjoHZd9KshCgL_ZGOrZm_wvTopLbyeWUCSSupC9wCVJe9YEexnaXdLGF5FTUtsqcKZnCXd-YP1scTuhfTkuq11_hwyH0w_NTSWjD3FsZ3f-GUh6guo37QFMvbkqlp8lDDM_RLK2DZUWjxKdwAU2O8g1hS3gqZWtdgRgNlICc3-UaHFP0mJu1RrAFRKWLcEf-lbETa7o6bt4G7ZTSgZlPeyxvf72xuLBPrcDvvXoGto8oD1iS7LgU8ZBe78sDeowq1vsHrjmNHTFbkjCa4NT2I0UjpfM_Z5nA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/ceo/122",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"ceo",
+						"122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ceo/32 success",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDc4NWUyNzM1MDFlOGRjNTY2ZjhlNGNkZTJiY2U4ZWVkYjUyNzhjNjUwZWU0NTI0N2FkMTg4Njc2NTU1MDJjYWZlNjQ1ZDA5YTNiMjgxMTIiLCJpYXQiOjE1OTM2MjA0MDgsIm5iZiI6MTU5MzYyMDQwOCwiZXhwIjoxNjI1MTU2NDA4LCJzdWIiOiIxMiIsInNjb3BlcyI6W119.Lf89rUMp7IoIEwYNNKspu4JL7abExjAH7zES9ZZY0iYRJ_f-ioGoFAtCmEkP6quNXZej2qNLkW7IQWKBS3H3nEAavo5_B4PvvyIV6VkXe0unIOhWg8EsCgNfQFEbTy8kCdpd_UdxR97c2q_LDpxIS3a3oDE9Khl9EWJOZnkAL7j1M9Td6i_xxsZuyRCOXADJgK1mL0R97_oBZh0ZrQLIVjTb92RA5bi35G-BvWDo5S4R0ZjAyz0pPKj1R3BgogTCyXESdff8f_0VqqAGX1n0-GUTJ5Cey_RCrf--yWRj2xXhRk9bi2_PYmfaNF5tdiyHHNuSRw55KR3QlxYAQpYc3nBNAD636M4dNK97Of0yGrL1u0nJMcPO2gvbxc-j4l_McgmPIe4VgybTjoHZd9KshCgL_ZGOrZm_wvTopLbyeWUCSSupC9wCVJe9YEexnaXdLGF5FTUtsqcKZnCXd-YP1scTuhfTkuq11_hwyH0w_NTSWjD3FsZ3f-GUh6guo37QFMvbkqlp8lDDM_RLK2DZUWjxKdwAU2O8g1hS3gqZWtdgRgNlICc3-UaHFP0mJu1RrAFRKWLcEf-lbETa7o6bt4G7ZTSgZlPeyxvf72xuLBPrcDvvXoGto8oD1iS7LgU8ZBe78sDeowq1vsHrjmNHTFbkjCa4NT2I0UjpfM_Z5nA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://ss-someapp.herokuapp.com/api/ceo/32",
+					"protocol": "https",
+					"host": [
+						"ss-someapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"ceo",
+						"32"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
